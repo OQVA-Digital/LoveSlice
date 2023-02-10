@@ -214,21 +214,15 @@ pointer-events: none;
   background-size: 95%;
   background-repeat: no-repeat;
   width: clamp(0rem, 100vw, 120rem);
-  height: clamp(15rem, 58vw, 61rem);
+  height: clamp(15rem, 62vw, 61rem);
   margin: 0 auto;
 } .slice_logo {
-
-width: clamp(10rem, 47vw, 53rem);
-
-position: absolute;
-
-left: 0;
-
-right: 0;
-
-margin: 0 auto;
-
-top: 0;
+width: clamp(10rem, 55vw, 53rem);
+position: absolute;
+left: 0;
+right: 0;
+margin: 0 auto;
+top: 0;
 }
 
 
