@@ -1,8 +1,3 @@
-console.log('done')
-
-
-
-
 
 
 
@@ -29,10 +24,8 @@ document.onreadystatechange = function () {
 
 /* HAMBURGUER MENU */
 
-/* const hambt = document.querySelector('.hambt')
+const hambt = document.querySelector('.hamburger_bt')
 const nav = document.querySelector('header nav')
-
-const hamDivs = document.querySelectorAll('.hambt div')
 
 let showingNav = false;
 
@@ -40,17 +33,9 @@ function toggleNav() {
     if(showingNav == false) {
         showingNav = true;
         nav.classList.add('showing_nav')
-
-        for(i=0;i<hamDivs.length;i++) {
-            hamDivs[i].style.backgroundColor = 'var(--lighta)';
-        }
     } else {
         showingNav = false;
         nav.classList.remove('showing_nav')
-
-        for(i=0;i<hamDivs.length;i++) {
-            hamDivs[i].style.backgroundColor = 'var(--c3)';
-        }
     }
 }
 
@@ -60,4 +45,4 @@ document.body.onscroll = function() {
     if(showingNav == true) {
         toggleNav()
     }
-} */
+}
