@@ -245,14 +245,10 @@ top: 0;
 }
 
 .selection_sec h2 {
-  
-text-align: center;
-  
-font-family: 'Inter', sans-serif;
-  
-font-size: clamp(2rem, 8vw, 4.5rem);
-  
-color: var(--dark);
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2rem, 8.5vw, 4.5rem);
+  color: var(--dark);
 }
 
 .pizza_menu {
@@ -305,14 +301,25 @@ color: var(--dark);
 } .menu_item .prep_time {
   font-size: clamp(1.4rem, 0.8vw, 1.8rem);
 } .menu_item .price {
-
-font-size: clamp(1.5rem, 5vw, 2.5rem);
-
-letter-spacing: 0.4rem;
-
-margin-top: 1rem;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  letter-spacing: 0.4rem;
+  margin-top: 1rem;
 }
 
+.just_eat_bt {
+  position: absolute;
+  width: clamp(3rem, 9vw, 3.6rem);
+  height: clamp(3rem, 9vw, 3.6rem);
+  left: 1.6rem;
+  bottom: 1.6rem;
+  background-color: var(--c1a);
+  border: 0.2rem solid var(--c1);
+  border-radius: 1rem;
+  background-image: url(assets/logo/logo-JustEat.svg);
+  background-position: center;
+  background-size: 55%;
+  background-repeat: no-repeat;
+}
 
 
 
@@ -325,14 +332,16 @@ margin-top: 1rem;
   font-size: clamp(2rem, 17vw, 9rem);
   line-height: 1;
   font-weight: 800;
+} .about_us_sec h2 span {
+  color: var(--c1a);
 } .about_us_sec .width1 {
-
 } .about_us_sec .txt {
   font-family: 'Inter', sans-serif;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   align-items: baseline;
+  margin-bottom: clamp(4rem, 10vw, 7rem);
 } .about_us_sec .txt p {
   font-size: clamp(1.2rem, 4.2vw, 1.8rem);
   letter-spacing: 0.03rem;
@@ -343,21 +352,27 @@ margin-top: 1rem;
   padding: clamp(1rem, 4vw, 1.6rem) clamp(2rem, 7vw, 3.5rem);
   background-color: var(--dark);
   border-radius: 10rem;
-  color: #ffffff;
+  color: var(--c2);
   font-size: clamp(1.2rem, 4.2vw, 1.7rem);
   display: inline-block;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  font-weight: 300;
+  font-weight: 100;
   margin-top: 1rem;
+  font-family: 'Arco', sans-serif;
+  letter-spacing: 0.3rem;
 } .about_us_sec picture {
   width: 100%;
   display: block;
 } .social_media_showroom {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: clamp(7rem, 20vw, 15rem) 0;
+  
+display: flex;
+  
+justify-content: center;
+  
+align-items: center;
+  
+margin: clamp(5rem, 15vw, 15rem) 0;
 }
 
 
