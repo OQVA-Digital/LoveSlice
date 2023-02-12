@@ -332,7 +332,7 @@ background-size: 55%;
   
 background-repeat: no-repeat;
 } .just_eat_bt::after {
-  content:'Soon available at JustEat!';
+  content:'Soon available on JustEat!';
   position: absolute;
   bottom: 50%;
   background-color: var(--c1);
