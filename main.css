@@ -177,7 +177,7 @@ header {
 
 .intro_sec {
   background-color:var(--c1);
-  padding: calc(clamp(3rem, 13vw, 6rem) + 2rem) 0 0;
+  padding: calc(clamp(3rem, 22vw, 8rem) + 2rem) 0 0;
   position: relative;
 } .logo_h1_ctnr {
   display: flex;
@@ -307,18 +307,52 @@ top: 0;
 }
 
 .just_eat_bt {
-  position: absolute;
-  width: clamp(3rem, 9vw, 3.6rem);
-  height: clamp(3rem, 9vw, 3.6rem);
-  left: 1.6rem;
-  bottom: 1.6rem;
-  background-color: var(--c1a);
-  border: 0.2rem solid var(--c1);
-  border-radius: 1rem;
-  background-image: url(assets/logo/logo-JustEat.svg);
-  background-position: center;
-  background-size: 55%;
-  background-repeat: no-repeat;
+  
+position: absolute;
+  
+width: clamp(3rem, 9vw, 3.6rem);
+  
+height: clamp(3rem, 9vw, 3.6rem);
+  
+right: 1.6rem;
+  
+bottom: 1.6rem;
+  
+background-color: var(--c1a);
+  
+border: 0.2rem solid var(--c1);
+  
+border-radius: 1rem;
+  
+background-image: url(assets/logo/logo-JustEat.svg);
+  
+background-position: center;
+  
+background-size: 55%;
+  
+background-repeat: no-repeat;
+} .just_eat_bt::after {
+  content:'Soon available at JustEat!';
+  position: absolute;
+  bottom: 50%;
+  background-color: var(--c1);
+  color: var(--light);
+  padding: 0.8rem 0.7rem;
+  font-weight: 600;
+  font-size: 1.3rem;
+  transform: translate(-105%, 60%);
+  border-radius: 0.6rem;
+  color: #ffffff;
+  width: calc(clamp(20rem, 75vw, 30rem) / 1.7);
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.2s ease, opacity 0.3s ease, visibility 0.3s ease;
+} .just_eat_bt:hover:after {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-105%, 50%);
+  transition: transform 0.2s 0.3s ease, opacity 0.3s 0.3s ease, visibility 0.3s 0.3s ease;
 }
 
 
@@ -353,7 +387,7 @@ top: 0;
   background-color: var(--dark);
   border-radius: 10rem;
   color: var(--light);
-  font-size: clamp(1.2rem, 4.2vw, 1.7rem);
+  font-size: clamp(1.2rem, 4.2vw, 1.6rem);
   display: inline-block;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
