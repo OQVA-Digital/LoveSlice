@@ -158,8 +158,8 @@ header {
   position:absolute;
   top: 1.2rem;
   right: 1.2rem;
-  width: clamp(3rem, 18vw, 6.5rem);
-  height: clamp(3rem, 18vw, 6.5rem);
+  width: clamp(3rem, 18vw, 7rem);
+  height: clamp(3rem, 18vw, 7rem);
   z-index: 1;
   background-image: url('assets/icons/hamburger-menu-bt.svg');
   background-position: top right;
@@ -177,7 +177,7 @@ header {
 
 .intro_sec {
   background-color:var(--c1);
-  padding: calc(clamp(3rem, 22vw, 8rem) + 2rem) 0 0;
+  padding: calc(clamp(3rem, 18vw, 7rem) + 4rem) 0 0;
   position: relative;
 } .logo_h1_ctnr {
   display: flex;
@@ -217,7 +217,7 @@ pointer-events: none;
   background-size: 95%;
   background-repeat: no-repeat;
   width: clamp(0rem, 100vw, 120rem);
-  height: clamp(15rem, 62vw, 61rem);
+  height: clamp(15rem, 67vw, 61rem);
   margin: 0 auto;
 } .slice_logo {
 
@@ -266,6 +266,7 @@ top: 0;
   background-color:var(--lightb);
 } .menu_item {
   min-width: clamp(20rem, 75vw, 30rem);
+  min-height: 30vh;
   height: clamp(33rem, 100vw, 42rem);
   background-color:#ffffff;
   scroll-snap-align: center;
@@ -278,12 +279,23 @@ top: 0;
   gap: 1rem;
   padding: 0 clamp(2rem, 8vw, 3rem);
   box-sizing: border-box;
-  /* border: 0.2rem solid var(--lighta); */
   transition: transform 0.7s ease;
   will-change: transform;
 } .menu_item:hover {
   transform:scale(1.03);
   transition: transform 0.4s 0.3s ease;
+} .menu_item.popular::after {
+  content:'popular';
+  position:absolute;
+  left: 1.6rem;
+  top: 1.6rem;
+  background-color: var(--dark);
+  color: #ffffff;
+  padding: clamp(0.4rem, 2vw, 0.6rem) 1rem;
+  font-size: clamp(1rem, 3.3vw, 1.3rem);
+  border-radius: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
 } .menu_item img {
   filter: drop-shadow(0.6rem 0.6rem 1rem var(--lightb));
   margin-bottom: 1rem;
@@ -302,7 +314,7 @@ top: 0;
   font-size: clamp(1.4rem, 0.8vw, 1.8rem);
 } .menu_item .price {
   font-size: clamp(1.5rem, 5vw, 2.5rem);
-  letter-spacing: 0.4rem;
+  letter-spacing: 0.3rem;
   margin-top: 1rem;
 }
 
@@ -331,28 +343,34 @@ background-position: center;
 background-size: 55%;
   
 background-repeat: no-repeat;
-} .just_eat_bt::after {
+} .just_eat_bt::before {
   content:'Soon available on JustEat!';
   position: absolute;
-  bottom: 50%;
-  background-color: var(--c1);
+  right: 5rem;
+  top: 50%;
+  background-color: #fff;
   color: var(--light);
-  padding: 0.8rem 0.7rem;
+  padding: 0 0.5rem;
   font-weight: 600;
-  font-size: 1.3rem;
-  transform: translate(-105%, 60%);
+  font-size: clamp(1rem, 3.5vw, 1.3rem);
+  transform: translate(0%, -50%);
   border-radius: 0.6rem;
-  color: #ffffff;
-  width: calc(clamp(20rem, 75vw, 30rem) / 1.7);
+  color: var(--c1);
+  width: calc(clamp(20rem, 75vw, 30rem) / 1.5);
   text-align: center;
   opacity: 0;
   visibility: hidden;
-  transition: transform 0.2s ease, opacity 0.3s ease, visibility 0.3s ease;
-} .just_eat_bt:hover:after {
+  transition: opacity 0.2s 0.3s ease, visibility 0.2s 0.3s ease;
+  border: 0.2rem solid var(--c1);
+  height: clamp(3rem, 9vw, 3.6rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+} .just_eat_bt:hover::before {
   opacity: 1;
   visibility: visible;
-  transform: translate(-105%, 50%);
-  transition: transform 0.2s 0.3s ease, opacity 0.3s 0.3s ease, visibility 0.3s 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 
@@ -360,7 +378,7 @@ background-repeat: no-repeat;
 /* ABOUT US SECTION */
 
 .about_us_sec {
-  padding: 5rem 0;
+  padding: 6rem 0 0;
 } .about_us_sec h2 {
   color: var(--c2);
   font-size: clamp(2rem, 17vw, 9rem);
@@ -479,7 +497,10 @@ footer {
     transition: background-color 0.05s ease;
   }
 
-  .intro_sec .cta {
+  .intro_sec {
+    
+padding: 8rem 0 0 0;
+  } .intro_sec .cta {
     display: unset;
     text-align: center;
     margin: 0 auto;
@@ -491,7 +512,7 @@ footer {
     background-color: var(--lightc);
     width: fit-content;
     padding: 1rem 2.5rem;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     color: var(--c1a);
     font-weight: 100;
     letter-spacing: 0.1rem;
@@ -546,16 +567,20 @@ z-index: 1;
 
   .pizza_circle .ctnr {
     background-image: url(assets/graphics/pizza-circle-small.svg);
+    min-height: 57vh;
+    max-height: 74vh;
   }
 
   .about_us_sec .width1 {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
   } .about_us_sec picture {
     width: clamp(20rem, 50vw, 58rem);
+    position: sticky;
+    top: 15vh;
   } .about_us_sec .txt {
-    width: clamp(20rem, 50vw, 65rem);
+    width: clamp(20rem, 55vw, 65rem);
   }
 }
 
