@@ -32,9 +32,6 @@ html,
     --c1a:#f76838;
 
     --c2:#F6B716;
-
-    --font-size1:
-    clamp(1.1rem, 3.4vw, 1.8rem);
   }
   
   html {
@@ -141,10 +138,10 @@ header {
   padding: 1.5rem 0;
 } header a {
   background-color: var(--light);
-  padding: 1.5rem;
-  font-size: var(--font-size1);
+  padding: 1.2rem;
+  font-size: clamp(1.1rem, 3.4vw, 1.7rem);
   border-bottom: 0.2rem solid #F0D9AC;
-  margin: 0.3rem 2rem;
+  margin: 0.4rem 2rem;
   border-radius: 0.5rem;
   cursor: pointer;
 }
@@ -155,7 +152,7 @@ header {
 
 
 .hamburger_bt {
-  position:absolute;
+  position: fixed;
   top: 1.2rem;
   right: 1.2rem;
   width: clamp(3rem, 18vw, 7rem);
@@ -177,8 +174,9 @@ header {
 
 .intro_sec {
   background-color:var(--c1);
-  padding: calc(clamp(3rem, 18vw, 7rem) + 4rem) 0 0;
+  padding: calc(clamp(3rem, 18vw, 7rem) + 2rem) 0 0;
   position: relative;
+  overflow: hidden;
 } .logo_h1_ctnr {
   display: flex;
   justify-content: center;
@@ -188,8 +186,31 @@ header {
 } .intro_sec .logo {
   width: clamp(10rem, 46vw, 26rem);
   display: block;
-} .intro_sec .cta {
-  display: none;
+} .selection_sec .cta {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  position: absolute;
+  top: calc(clamp(2.8rem, 7vw, 7.5rem) * -1);
+  left: 0;
+  right: 0;
+  background-color: var(--lightc);
+  width: fit-content;
+  padding: clamp(0.7rem, 3vw, 1rem) clamp(1.5rem, 6vw, 2.5rem);
+  font-size: clamp(1.5rem, 5vw, 1.8rem);
+  color: var(--c1a);
+  font-weight: 100;
+  letter-spacing: 0.1rem;
+  border-radius: 0.5rem;
+  line-height: 1.3;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 0.4rem var(--lightb);
+  cursor: pointer;
+} .selection_sec .cta:hover {
+  transition: background-color 0.2s ease, box-shadow 0.1s ease, transform 0.1s ease;
+  background-color: #ffffff;
+  transform: translateY(0.4rem);
+  box-shadow: 0 0rem var(--lightb), 0 0rem 2rem -0.5rem var(--lighta);
 } h1 {
   text-transform: uppercase;
   color: var(--light);
@@ -210,7 +231,7 @@ position: relative;
 
 z-index: 1;
 
-pointer-events: none;
+/* pointer-events: none; */
 } .pizza_circle .ctnr {
   background-image: url(assets/graphics/pizza-circle-big.svg);
   background-position: bottom center;
@@ -235,20 +256,80 @@ top: 0;
 }
 
 
+.pizza_carousel {
+
+padding-top: 17rem;
+} .pizza_carousel .circle {
+  
+width: clamp(20rem, 70vw, 85rem);
+  
+height: clamp(20rem, 70vw, 85rem);
+  
+border: 0.2rem dashed var(--light);
+  
+border-radius: 100rem;
+  
+margin: 0 auto;
+  
+position: relative;
+  
+margin-bottom: calc(clamp(20rem, 70vw, 85rem) / -2);
+  
+/* margin-bottom: 10rem; */
+} .pizza_carousel .circle .ctnr {
+  
+/* height: 9rem; */
+} .pizza_carousel .pizza_name {
+  text-align: center;
+  display: block;
+  top: calc(clamp(16rem, 17vw, 21rem) * -1);
+  left: 0;
+  right: 0;
+  position: absolute;
+  color: var(--lightc);
+  letter-spacing: 0.3rem;
+  font-size: 3rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  opacity: 0;
+  visibility: hidden;
+  text-transform: uppercase;
+} .pizza_carousel .pizza {
+  position: absolute;
+  bottom: calc(50% - (clamp(7rem, 10vw, 15rem) / 2));
+  transform: rotate(0deg) translateY(calc(clamp(20rem, 70vw, 85rem) / -2)) scale(1);
+  width: clamp(7rem, 10vw, 13rem);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transition: transform 0.5s ease;
+  will-change: transform;
+} .selected + .pizza_name {
+  opacity:1;
+  visibility: visible;
+} .pizza_carousel .selected {
+  transform: rotate(0deg) translateY(calc(clamp(20rem, 70vw, 80rem) / -2)) scale(2.8);
+  z-index: 1;
+} .pizza_carousel .p2 {
+  transform: rotate(50deg) translateY(calc(clamp(20rem, 70vw, 85rem) / -2)) scale(1);
+} .pizza_carousel .p3 {
+  transform: rotate(80deg) translateY(calc(clamp(20rem, 70vw, 85rem) / -2)) scale(1);
+}
+
+
 
 
 /* PIZZA CATALOG SECTION */
 
 
-.selection_sec {
-  padding: clamp(2rem, 10vw, 7rem) 0;
-}
+.selection_sec {padding: clamp(2rem, 12vw, 6rem) 0 0;position: relative;}
 
 .selection_sec h2 {
   text-align: center;
   font-family: 'Inter', sans-serif;
   font-size: clamp(2rem, 8.5vw, 4.5rem);
   color: var(--dark);
+  display: none;
 }
 
 .pizza_menu {
@@ -256,7 +337,7 @@ top: 0;
   flex-direction: row;
   gap: 3rem;
   overflow-x: auto;
-  padding: clamp(2rem, 10vw, 5rem) calc((100vw - clamp(20rem, 75vw, 30rem)) / 2) 5rem;
+  padding: clamp(2rem, 8vw, 3rem) calc((100vw - clamp(20rem, 80vw, 30rem)) / 2) 5rem;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
 } .pizza_menu::-webkit-scrollbar-thumb {
@@ -265,9 +346,9 @@ top: 0;
 } .pizza_menu::-webkit-scrollbar-thumb:hover {
   background-color:var(--lightb);
 } .menu_item {
-  min-width: clamp(20rem, 75vw, 30rem);
+  min-width: clamp(20rem, 80vw, 35rem);
   min-height: 30vh;
-  height: clamp(33rem, 100vw, 42rem);
+  height: clamp(33rem, 115vw, 51rem);
   background-color:#ffffff;
   scroll-snap-align: center;
   border-radius: 1.6rem;
@@ -276,14 +357,18 @@ top: 0;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 1.2rem;
   padding: 0 clamp(2rem, 8vw, 3rem);
   box-sizing: border-box;
-  transition: transform 0.7s ease;
+  transition: transform 1s ease;
   will-change: transform;
+  box-shadow: 0 0.4rem 1.4rem var(--lighta);
 } .menu_item:hover {
   transform:scale(1.03);
-  transition: transform 0.4s 0.3s ease;
+  transition: transform 0.5s 0.5s ease;
+} .menu_item:hover img {
+  transform: scale(1.03);
+  transition: transform 0.45s 0.3s ease;
 } .menu_item.popular::after {
   content:'popular';
   position:absolute;
@@ -300,6 +385,7 @@ top: 0;
   filter: drop-shadow(0.6rem 0.6rem 1rem var(--lightb));
   margin-bottom: 1rem;
   width: 80%;
+  transition: transform 0.8s 0.2s ease-in-out;
 } .menu_item .flex {
   align-items: baseline;
   justify-content: space-between;
@@ -308,12 +394,12 @@ top: 0;
   font-size: 1.4rem;
   font-weight: 500;
 } .menu_item h3 {
-  font-size: clamp(1.6rem, 5vw, 2.1rem);
+  font-size: clamp(1.6rem, 5vw, 2rem);
   font-weight: 700;
 } .menu_item .prep_time {
   font-size: clamp(1.4rem, 0.8vw, 1.8rem);
 } .menu_item .price {
-  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-size: clamp(1.5rem, 6vw, 2.5rem);
   letter-spacing: 0.3rem;
   margin-top: 1rem;
 }
@@ -378,7 +464,7 @@ background-repeat: no-repeat;
 /* ABOUT US SECTION */
 
 .about_us_sec {
-  padding: 6rem 0 0;
+  padding: clamp(5rem, 15vw, 10rem) 0 0;
 } .about_us_sec h2 {
   color: var(--c2);
   font-size: clamp(2rem, 17vw, 9rem);
@@ -413,6 +499,7 @@ background-repeat: no-repeat;
   margin-top: 1rem;
   font-family: 'Arco', sans-serif;
   letter-spacing: 0.3rem;
+  line-height: 1;
 } .about_us_sec picture {
   width: 100%;
   display: block;
@@ -476,7 +563,7 @@ footer {
     display: none;
   } header {
     position: absolute;
-    padding-top: 4rem;
+    padding-top: 3rem;
     z-index: 2;
     width: fit-content;
     margin: 0 auto;
@@ -501,30 +588,7 @@ footer {
     
 padding: 8rem 0 0 0;
   } .intro_sec .cta {
-    display: unset;
-    text-align: center;
-    margin: 0 auto;
-    display: block;
-    position: absolute;
-    bottom: 3.5rem;
-    left: 0;
-    right: 0;
-    background-color: var(--lightc);
-    width: fit-content;
-    padding: 1rem 2.5rem;
-    font-size: 1.7rem;
-    color: var(--c1a);
-    font-weight: 100;
-    letter-spacing: 0.1rem;
-    border-radius: 0.5rem;
-    line-height: 1.3;
-    transition: background-color 0.3s ease, box-shadow  0.3s ease, transform 0.3s ease;
-    box-shadow: 0 0.4rem var(--lightb);
-  } .intro_sec .cta:hover {
-    transition: background-color 0.2s ease, box-shadow 0.1s ease, transform 0.1s ease;
-    background-color: #ffffff;
-    transform: translateY(0.4rem);
-    box-shadow: 0 0rem var(--lightb), 0 0rem 2rem -0.5rem var(--lighta);
+    
   }
 
   .slice_logo {
@@ -539,6 +603,8 @@ padding: 8rem 0 0 0;
     
 width: 82%;
     
+max-width: 150rem;
+    
 gap: unset;
     
 justify-content: space-between;
@@ -550,9 +616,16 @@ position: relative;
 z-index: 1;
   }
 
+  .pizza_carousel .selected {
+    
+transform: rotate(0deg) translateY(calc(clamp(20rem, 70vw, 85rem) / -2.55)) scale(3.9);
+  }
+
 
   .pizza_menu {
-    padding: clamp(2rem, 10vw, 5rem) 8rem 5rem;
+    padding: clamp(2rem, 8vw, 4rem) 8rem 5rem;
+    max-width: 150rem;
+    margin: 0 auto;
   }
 
 
