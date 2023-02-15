@@ -39,7 +39,7 @@ html,
     --carousel-pizza-mobile-width:
     clamp(7rem, 62vw, 24rem);
     --carousel-pizza-desktop-width:
-    clamp(7rem, 45vw, 61rem);
+    clamp(7rem, 45vw, 59rem);
 
     --secondary-pizza-mobile-scale: 0.3;
     --secondary-pizza-desktop-scale: 0.3;
@@ -193,7 +193,7 @@ header {
   justify-content: center;
   align-items: center;
   gap: clamp(1rem, 5vw, 3rem);
-  margin: 0 0 6rem 0;
+  margin: 0 0 clamp(2rem, calc(45vw - 12rem), 8rem) 0;
 } .intro_sec .logo {
   width: clamp(10rem, 46vw, 26rem);
   display: block;
@@ -275,7 +275,7 @@ header {
 } .pizza_carousel .pizza_name {
   text-align: center;
   display: block;
-  top: calc(clamp(16rem, 20vw, 17.5rem) * -1.2);
+  top: calc(clamp(11rem, 37vw, 16rem) * -1.2);
   left: 0;
   right: 0;
   position: absolute;
@@ -297,7 +297,7 @@ header {
   left: 0;
   right: 0;
   margin: 0 auto;
-  transition: transform 0.8s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+  transition: transform 1.1s ease;
   will-change: transform;
 }
 
@@ -305,6 +305,7 @@ header {
 
 .pizza:not(.p1) {
   cursor: pointer;
+  transform: scale(0.1);
 } .pizza.p1 {
   transform: rotate(0deg) translateY(calc(var(--carousel-pizza-circle-size) / -2)) scale(1);
 }
@@ -366,7 +367,7 @@ header {
 } .menu_item {
   min-width: clamp(20rem, 80vw, 32rem);
   min-height: 30vh;
-  height: clamp(33rem, 115vw, 45rem);
+  height: clamp(33rem, 110vw, 45rem);
   background-color:#ffffff;
   scroll-snap-align: center;
   border-radius: 1.6rem;
@@ -375,7 +376,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1.2rem;
+  gap: 0.6rem;
   padding: 0 clamp(2rem, 7vw, 3rem);
   box-sizing: border-box;
   transition: transform 1s ease;
@@ -401,18 +402,29 @@ header {
   letter-spacing: 0.05rem;
 } .menu_item img {
   filter: drop-shadow(0.6rem 0.6rem 1rem var(--lightb));
-  margin-bottom: 1rem;
+  margin-bottom: clamp(1.4rem, 5vw, 2rem);
   width: 80%;
   transition: transform 0.8s ease-in-out;
 } .menu_item .flex {
   align-items: baseline;
   justify-content: space-between;
   width: 100%;
+  position: relative;
 } .menu_item .description {
   font-size: clamp(1.2rem, 4vw, 1.4rem);
   font-weight: 500;
 } .menu_item .description b {
   font-weight: 600;
+} .menu_item sup {
+position: absolute;
+left: 0;
+top: 0;
+font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+transform: translateY(-115%);
+font-weight: 600;
+color: #BBA;
+letter-spacing: 0.16rem;
+text-transform: uppercase;
 } .menu_item h3 {
   font-size: clamp(1.6rem, 5vw, 2rem);
   font-weight: 700;
@@ -421,7 +433,8 @@ header {
 } .menu_item .price {
   font-size: clamp(1.5rem, 8vw, 2.5rem);
   letter-spacing: 0.3rem;
-  margin-top: 1rem;
+  margin-top: clamp(1.2rem, 5vw, 2rem);
+  font-weight: 500;
 }
 
 .just_eat_bt {
@@ -748,12 +761,16 @@ padding: 8rem 0 0 0;
     width: var(--carousel-pizza-desktop-width);
     bottom: calc(50% - (var(--carousel-pizza-desktop-width) / 2));
     transform: rotate(0deg) translateY(calc(var(--carousel-pizza-circle-size).7)) scale(0.4);
-    transition: transform 0.8s cubic-bezier(0.46, 0.03, 0.52, 0.96), filter 0.3s ease;
+    transition: transform 1.1s ease, filter 0.3s ease;
   } .pizza_carousel .pizza_name {
-    top: calc(clamp(13rem, 18vw, 17.5rem) * -1.2);
-    font-size: clamp(2.5rem, 3vw, 3.6rem);
-    width: clamp(10rem, 35vw, 80rem);
-    filter: drop-shadow(0.4rem 0 0 var(--c1a)) drop-shadow(-0.4rem 0 0 var(--c1a)) drop-shadow(0 0.4rem 0 var(--c1a)) drop-shadow(0 -0.4rem 0 var(--c1a));
+    
+top: calc(clamp(13rem, 18vw, 17.5rem) * -1.2);
+    
+font-size: clamp(2.5rem, 3vw, 3.6rem);
+    
+width: clamp(10rem, 35vw, 80rem);
+    
+filter: drop-shadow(0.4rem 0 0 var(--c1a)) drop-shadow(-0.4rem 0 0 var(--c1a)) drop-shadow(0 0.5rem 0 var(--c1a)) drop-shadow(0 -0.4rem 0 var(--c1a));
   }
 
 
