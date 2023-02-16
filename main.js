@@ -52,3 +52,93 @@ document.body.onscroll = function() {
 
 
 
+
+
+        // PIZZA CAROUSEL
+        
+        const pizzas = document.querySelectorAll('.pizza_carousel .pizza')
+        const introSec = document.querySelector('.intro_sec')
+        
+        let mobileOrder;
+        let increment = 1;
+
+        
+        setTimeout(() => {
+            for(i=0;i<pizzas.length;i++) {
+
+                pizzas[i].addEventListener('click', function() {
+                    if(this.className.replace(/\D/g, "") <= 1) {
+                        increment++
+                        for(i=0;i<pizzas.length;i++) {
+                            mobileOrder = i;
+                            pizzas[mobileOrder].className = `pizza p${mobileOrder + increment}`
+                        }
+                    } else if(this.className.replace(/\D/g, "") > 1) {
+                        increment--
+                        for(i=0;i<pizzas.length;i++) {
+                            mobileOrder = i;
+                            pizzas[mobileOrder].className = `pizza p${mobileOrder + increment}`
+                        }
+                    }
+                })
+                
+                mobileOrder = i;
+                pizzas[mobileOrder].className = `pizza p${mobileOrder + 1}`
+
+                mobileOrder++
+            }
+            pizzas[7].click()
+            pizzas[7].click()
+            pizzas[7].click()
+        }, 70);
+
+
+        
+        let touchstartX = 0
+        let touchendX = 0
+
+        let touchstartY = 0
+        let touchendY = 0
+            
+        function checkDirection() {
+
+                if((touchendX + 30) < touchstartX && touchendY < (touchstartY + 100) && touchendY > (touchstartY - 70)) {
+                    if(increment != -6) {
+                    
+                        increment--
+
+                        for(i=0;i<pizzas.length;i++) {
+                            mobileOrder = i;
+                            pizzas[mobileOrder].className = `pizza p${mobileOrder + increment}`
+                        }
+                    } else {
+                        
+                    }
+                }
+            
+                if(touchendX > (touchstartX + 30) && touchendY > (touchstartY - 50) && touchendY < (touchstartY + 50)) {
+                    if(increment != 1) {
+
+                        increment++
+
+                        for(i=0;i<pizzas.length;i++) {
+                            mobileOrder = i;
+                            pizzas[mobileOrder].className = `pizza p${mobileOrder + increment}`
+                        }
+                    } else {
+                        
+                    }
+                }
+
+        }
+
+        introSec.addEventListener('touchstart', e => {
+            touchstartX = e.changedTouches[0].screenX
+            touchstartY = e.changedTouches[0].screenY
+        })
+
+        introSec.addEventListener('touchend', e => {
+            touchendX = e.changedTouches[0].screenX
+            touchendY = e.changedTouches[0].screenY
+            checkDirection()
+        })
