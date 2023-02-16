@@ -34,10 +34,10 @@ html,
     --c2:#F6B716;
 
     --carousel-pizza-circle-size:
-    clamp(20rem, 80vw, 92rem);
+    clamp(20rem, 80vw, 90rem);
     
     --carousel-pizza-mobile-width:
-    clamp(7rem, 75vw, 30rem);
+    clamp(7rem, 80vw, 38rem);
     --carousel-pizza-desktop-width:
     clamp(7rem, 45vw, 55rem);
 
@@ -184,7 +184,7 @@ header {
 
 
 .intro_sec {
-  FONT-WEIGHT: 500;
+  font-weight: 500;
   background-color:var(--c1);
   padding: calc(clamp(3rem, 9vw, 7rem) + 2rem) 0 0;
   position: relative;
@@ -261,7 +261,7 @@ header {
 
 
 .pizza_carousel {
-  padding-top: clamp(19rem, 62vw, 26rem);
+  padding-top: clamp(21rem, 68vw, 30rem);
 } .pizza_carousel .circle {
   width: var(--carousel-pizza-circle-size);
   height: var(--carousel-pizza-circle-size);
@@ -271,18 +271,19 @@ header {
   position: relative;
   margin-bottom: calc(var(--carousel-pizza-circle-size) / -2);
   /* margin-bottom: unset; */
+  padding-top: calc(30vw - 52rem);
 } .pizza_carousel .circle .ctnr {
   /* height: 9rem; */
 } .pizza_carousel .pizza_name {
   text-align: center;
   display: block;
-  bottom: calc(clamp(11rem, 53vw, 26rem) * 2.5);
+  bottom: calc(clamp(11rem, 56vw, 26rem) * 2.5);
   left: 0;
   right: 0;
   position: absolute;
   color: var(--lightc);
   letter-spacing: 0.3rem;
-  font-size: clamp(2rem, 6vw, 3.6rem);
+  font-size: clamp(2rem, 6.5vw, 3.6rem);
   /* font-family: 'Inter', sans-serif; */
   font-weight: 100;
   opacity: 0;
@@ -309,7 +310,7 @@ header {
   cursor: pointer;
   transform: scale(0.1);
 } .pizza.p1 {
-  transform: rotate(0deg) translateY(calc(var(--carousel-pizza-circle-size) / -1.6)) scale(1);
+  transform: rotate(0deg) translateY(calc(var(--carousel-pizza-circle-size) / -1.5)) scale(1);
   pointer-events: none;
 }
 
@@ -323,13 +324,13 @@ header {
   transform: rotate(-90deg) translateY(calc(var(--carousel-pizza-circle-size) / -2)) scale(var(--secondary-pizza-mobile-scale));
 }
 .pizza.p0 {
-  transform: rotate(-55deg) translateY(calc(var(--carousel-pizza-circle-size) / -2)) scale(var(--secondary-pizza-mobile-scale));
+  transform: rotate(-53deg) translateY(calc(var(--carousel-pizza-circle-size) / -2)) scale(var(--secondary-pizza-mobile-scale));
 } .pizza.p-2, .pizza.p-3, .pizza.p-4, .pizza.p-5, .pizza.p-6, .pizza.p-7 {
   transform: rotate(-125deg) translateY(calc(var(--carousel-pizza-circle-size) / -2)) scale(var(--secondary-pizza-mobile-scale));
 }
 
 .pizza.p2 {
-  transform: rotate(55deg) translateY(calc(var(--carousel-pizza-circle-size) / -2)) scale(var(--secondary-pizza-mobile-scale));
+  transform: rotate(53deg) translateY(calc(var(--carousel-pizza-circle-size) / -2)) scale(var(--secondary-pizza-mobile-scale));
 } .pizza.p3 {
   transform: rotate(90deg) translateY(calc(var(--carousel-pizza-circle-size) / -2)) scale(var(--secondary-pizza-mobile-scale));
 } .pizza.p4, .pizza.p5, .pizza.p6, .pizza.p7, .pizza.p8 {
@@ -379,7 +380,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.6rem;
+  gap: clamp(0.6rem, 2vw, 0.8rem);
   padding: 0 clamp(2rem, 7vw, 3rem);
   box-sizing: border-box;
   transition: transform 1s ease;
@@ -413,24 +414,15 @@ header {
 } .menu_item .description b {
   font-weight: 600;
 } .menu_item sup {
-
-position: absolute;
-
-left: 0;
-
-top: 0;
-
-font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-
-transform: translateY(-115%);
-
-font-weight: 600;
-
-color: #BBA;
-
-letter-spacing: 0.16rem;
-
-text-transform: uppercase;
+position: absolute;
+left: 0;
+top: 0;
+font-size: clamp(1.1rem, 3vw, 1.2rem);
+transform: translateY(-110%);
+font-weight: 500;
+color: #BBB;
+letter-spacing: 0.18rem;
+text-transform: uppercase;
 } .menu_item h3 {
   font-size: clamp(1.6rem, 5vw, 2rem);
   font-weight: 700;
@@ -731,11 +723,11 @@ padding: 8rem 0 0 0;
   }
 
   .pizza.p-1 {
-    transform: rotate(-90deg) translateY(calc(clamp(20rem, 70vw, 85rem) / -2)) scale(var(--secondary-pizza-desktop-scale));
+    transform: rotate(-85deg) translateY(calc(clamp(20rem, 70vw, 85rem) / -2)) scale(var(--secondary-pizza-desktop-scale));
   }
   .pizza.p0 {
     transform: rotate(-55deg) translateY(calc(var(--carousel-pizza-circle-size) / -2)) scale(0.4);
-    transition: transform 0.8s cubic-bezier(0.46, 0.03, 0.52, 0.96), filter 0.3s ease;
+    transition: transform 0.6s cubic-bezier(0.46, 0.03, 0.52, 0.96), filter 0.3s ease;
   } .pizza.p0:hover {
     filter: drop-shadow(-1.5rem -0.2rem 0.2rem #00000088);
     FONT-WEIGHT: 500;
@@ -752,13 +744,13 @@ padding: 8rem 0 0 0;
 
   .pizza.p2 {
     transform: rotate(55deg) translateY(calc(var(--carousel-pizza-circle-size) / -2)) scale(0.4);
-    transition: transform 0.8s cubic-bezier(0.46, 0.03, 0.52, 0.96), filter 0.3s ease;
+    transition: transform 0.6s cubic-bezier(0.46, 0.03, 0.52, 0.96), filter 0.3s ease;
   } .pizza.p2:hover {
     filter: drop-shadow(0.7rem 1.1rem 0.2rem #00000088);
   }
   
   .pizza.p3 {
-    transform: rotate(90deg) translateY(calc(clamp(20rem, 70vw, 85rem) / -2)) scale(var(--secondary-pizza-desktop-scale));
+    transform: rotate(85deg) translateY(calc(clamp(20rem, 70vw, 85rem) / -2)) scale(var(--secondary-pizza-desktop-scale));
   } .pizza.p4, .pizza.p5, .pizza.p6, .pizza.p7, .pizza.p8  {
     transform: rotate(125deg) translateY(calc(clamp(20rem, 70vw, 85rem) / -2)) scale(var(--secondary-pizza-desktop-scale));
   }
@@ -767,18 +759,18 @@ padding: 8rem 0 0 0;
     width: var(--carousel-pizza-desktop-width);
     bottom: calc(50% - (var(--carousel-pizza-desktop-width) / 2));
     transform: rotate(0deg) translateY(calc(var(--carousel-pizza-circle-size).7)) scale(0.4);
-    transition: transform 1.1s ease, filter 0.3s ease;
+    transition: transform 0.6s ease, filter 0.3s ease;
   } .pizza_carousel .pizza_name {
-    bottom: calc(clamp(10rem, 15vw, 17.2rem) * 6.4);
-    font-size: clamp(2.5rem, 3vw, 3.6rem);
-    width: clamp(10rem, 35vw, 80rem);  
+    bottom: calc(clamp(10rem, 15vw, 17rem) * 6.4);
+    font-size: clamp(2.5rem, 3vw, 3.4rem);
+    width: clamp(10rem, 35vw, 80rem);
     filter: drop-shadow(0.4rem 0 0 var(--c1a)) drop-shadow(-0.4rem 0 0 var(--c1a)) drop-shadow(0 0.5rem 0 var(--c1a)) drop-shadow(0 -0.4rem 0 var(--c1a));
   }
 
 
   .pizza_menu {
     padding: clamp(2rem, 8vw, 4rem) 8rem 5rem;
-    max-width: 150rem;
+    max-width: 155rem;
     margin: 0 auto;
   } .pizza_carousel {
     padding-top: 18rem;
