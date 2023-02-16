@@ -409,7 +409,7 @@ header {
   width: 100%;
   position: relative;
 } .menu_item .description {
-  font-size: clamp(1.2rem, 4vw, 1.4rem);
+  font-size: clamp(1.2rem, 4vw, 1.45rem);
   font-weight: 500;
 } .menu_item .description b {
   font-weight: 600;
@@ -438,10 +438,10 @@ text-transform: uppercase;
 } .menu_item .prep_time {
   font-size: clamp(1.4rem, 0.8vw, 1.8rem);
 } .menu_item .price {
-  font-size: clamp(1.5rem, 8vw, 2.8rem);
+  font-size: clamp(1.5rem, 8vw, 2.6rem);
   letter-spacing: 0.2rem;
-  margin-top: clamp(1rem, 3vw, 2rem);
-  font-weight: 600;
+  margin-top: clamp(1rem, 3vw, 1.5rem);
+  font-weight: 500;
 }
 
 .just_eat_bt {
@@ -641,11 +641,12 @@ footer {
   width: 100%;
   padding: 1.6rem 0;
   font-family: 'Inter', sans-serif;
-  font-size: clamp(0.9rem, 3vw, 1.5rem);
+  font-size: clamp(0.9rem, 3.3vw, 1.5rem);
 } footer span {
-  color: var(--light);
+  color: var(--lightc);
   text-align: center;
   display: block;
+  font-weight: 300;
 }
 
 
