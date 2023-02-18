@@ -166,8 +166,8 @@ header {
   position: fixed;
   top: 1.2rem;
   right: 1.2rem;
-  width: clamp(3rem, 18vw, 7rem);
-  height: clamp(3rem, 18vw, 7rem);
+  width: clamp(3rem, 15vw, 7rem);
+  height: clamp(3rem, 15vw, 7rem);
   z-index: 2;
   background-image: url('assets/icons/hamburger-menu-bt.svg');
   background-position: top right;
@@ -194,7 +194,7 @@ header {
   justify-content: center;
   align-items: center;
   gap: clamp(1rem, 5vw, 3rem);
-  margin: 0 0 clamp(2rem, calc(45vw - 12rem), 8rem) 0;
+  margin: 0 0 clamp(2rem, calc(45vw - 10rem), 8rem) 0;
 } .intro_sec .logo {
   width: clamp(10rem, 46vw, 26rem);
   display: block;
@@ -275,7 +275,7 @@ header {
   margin-bottom: calc(var(--carousel-pizza-circle-size) / -2);
   /* margin-bottom: unset; */
   padding-top: calc(30vw - 52rem);
-  animation: rotate_border 100s linear infinite;
+  animation: rotate_border 60s linear infinite;
   box-sizing: border-box;
 } @keyframes rotate_border {
   0% {
@@ -288,7 +288,7 @@ header {
 } .pizza_carousel .pizza_name {
   text-align: center;
   display: block;
-  bottom: calc(clamp(11rem, 56vw, 26rem) * 1.8);
+  bottom: calc(clamp(11rem, 56vw, 26rem) * 1.75);
   left: 0;
   right: 0;
   position: absolute;
@@ -303,6 +303,8 @@ header {
   transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 3;
   margin: 0 auto;
+  max-width: 75%;
+  line-height: 1.2;
 } .pizza {
   position: absolute;
   bottom: calc(50% - (var(--carousel-pizza-mobile-width) / 2));
@@ -335,6 +337,7 @@ header {
 
 .pizza.p-1 {
   transform: rotate(-90deg) translateY(calc(var(--carousel-pizza-circle-size) / -2)) scale(var(--secondary-pizza-mobile-scale));
+  transition: transform 0.6s cubic-bezier(0.46, 0.03, 0.52, 0.96), filter 0.3s ease;
 }
 .pizza.p0 {
   transform: rotate(-53deg) translateY(calc(var(--carousel-pizza-circle-size) / -2)) scale(var(--secondary-pizza-mobile-scale));
@@ -346,6 +349,7 @@ header {
   transform: rotate(53deg) translateY(calc(var(--carousel-pizza-circle-size) / -2)) scale(var(--secondary-pizza-mobile-scale));
 } .pizza.p3 {
   transform: rotate(90deg) translateY(calc(var(--carousel-pizza-circle-size) / -2)) scale(var(--secondary-pizza-mobile-scale));
+  transition: transform 0.6s cubic-bezier(0.46, 0.03, 0.52, 0.96), filter 0.3s ease;
 } .pizza.p4, .pizza.p5, .pizza.p6, .pizza.p7, .pizza.p8 {
   transform: rotate(125deg) translateY(calc(var(--carousel-pizza-circle-size) / -2)) scale(var(--secondary-pizza-mobile-scale));
 }
@@ -458,10 +462,10 @@ text-transform: uppercase;
   font-weight: 500;
 }
 
-.just_eat_bt {
+.pizza_bt {
   position: absolute;
-  width: clamp(3rem, 9vw, 3.2rem);
-  height: clamp(3rem, 9vw, 3.2rem);
+  width: clamp(3rem, 9vw, 3.3rem);
+  height: clamp(3rem, 9vw, 3.3rem);
   right: 1.6rem;
   bottom: 1.6rem;
   background-color: var(--c1a);
@@ -542,7 +546,7 @@ justify-content: center;
 
 align-items: center;
 
-margin: clamp(6rem, 38vw, 14rem) 0;
+margin: clamp(6rem, 38vw, 12rem) 0;
 } .contact_sec .ctnr {
   width: clamp(12rem, 85vw, 68rem);
   border-radius: 1.6rem;
@@ -641,19 +645,56 @@ footer {
 .cart_simulation {
   position: sticky;
   bottom: 2.5rem;
+  top: 2.5rem;
   right:0;
   left:0;
   margin:0 auto;
-  height: clamp(4rem, 12vw, 5rem);
-  width: clamp(12rem, 65vw, 30rem);
-  background-color: var(--c1a);
-  border-radius: 20rem;
+  height: clamp(4rem, 12vw, 4.5rem);
   z-index: 3;
-  margin-bottom: 2.5rem;
+  margin: 5.5rem auto 2.5rem;
+  color: var(--lightc);
+  font-size: clamp(1.2rem, 4.2vw, 1.6rem);
+  font-family: 'Inter';
+  padding: 0 0.6rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: fit-content;
 } .cart_simulation .qty {
 
 } .cart_simulation a {
-
+  background-color: var(--c1a);
+  width: clamp(12rem, 50vw, 19rem);
+  height: 100%;
+  border-radius: 3rem;
+  font-family: 'Arco';
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.2rem;
+} .cart_simulation .qty, .cart_simulation .price {
+  
+display: flex;
+  
+font-weight: 800;
+  
+font-size: 1em;
+  
+background-color: #fff;
+  
+border-radius: 11rem;
+  
+width: clamp(4rem, 12vw, 4.5rem);
+  
+height: clamp(4rem, 12vw, 4.5rem);
+  
+color: var(--c1a);
+  
+justify-content: center;
+  
+align-items: center;
 } .cart_simulation .price {
 
 }
@@ -742,8 +783,8 @@ padding: 8rem 0 0 0;
   .pizza.p0 {
     transform: rotate(-55deg) translateY(calc(var(--carousel-pizza-circle-size) / -2)) scale(0.4);
     transition: transform 0.6s cubic-bezier(0.46, 0.03, 0.52, 0.96), filter 0.3s ease;
-  } .pizza.p0:hover {
-    filter: drop-shadow(-1.5rem -0.2rem 0.2rem #00000088);
+  } .pizza.p0:hover, .pizza.p-1:hover {
+    filter: drop-shadow(-1.5rem 0 0.2rem #00000088);
     FONT-WEIGHT: 500;
   } .pizza.p-2, .pizza.p-3, .pizza.p-4, .pizza.p-5, .pizza.p-6, .pizza.p-7 {
     transform: rotate(-125deg) translateY(calc(clamp(20rem, 70vw, 85rem) / -2)) scale(var(--secondary-pizza-desktop-scale));
@@ -758,8 +799,8 @@ padding: 8rem 0 0 0;
   .pizza.p2 {
     transform: rotate(55deg) translateY(calc(var(--carousel-pizza-circle-size) / -2)) scale(0.4);
     transition: transform 0.6s cubic-bezier(0.46, 0.03, 0.52, 0.96), filter 0.3s ease;
-  } .pizza.p2:hover {
-    filter: drop-shadow(0.7rem 1.1rem 0.2rem #00000088);
+  } .pizza.p2:hover, .pizza.p3:hover {
+    filter: drop-shadow(1.5rem 0 0.2rem #00000088);
   }
   
   .pizza.p3 {
@@ -811,6 +852,11 @@ padding: 8rem 0 0 0;
   form textarea {
     
 padding: 1.4rem 0.9rem;
+  }
+
+
+  .pizza_carousel .circle {
+    animation: rotate_border 100s linear infinite;
   }
 }
 

@@ -76,6 +76,8 @@
         </div>
     </section>
 
+    <div>
+
     <section class="selection_sec" id="menu">
 
         <a class="cta" title="You'll be redirected to JustEat">Order Now!</a>
@@ -96,7 +98,7 @@
 
                 <span class="price">£13</span>
 
-                <a class="just_eat_bt" title="Add to the cart"></a>
+                <a class="pizza_bt" onclick="updateCart('add', 'italian', 13)" title="Add to the cart"></a>
             </div>
 
             <div class="menu_item popular">
@@ -112,7 +114,7 @@
 
                 <span class="price">£13</span>
 
-                <a class="just_eat_bt" title="Add to the cart"></a>
+                <a class="pizza_bt" title="Add to the cart"></a>
             </div>
             <div class="menu_item">
                 <img src="assets/menu/italian-pizza.png" alt="product shot" draggable="false" oncontextmenu="return false">
@@ -127,7 +129,7 @@
 
                 <span class="price">£13</span>
 
-                <a class="just_eat_bt" title="Add to the cart"></a>
+                <a class="pizza_bt" title="Add to the cart"></a>
             </div>
 
             <div class="menu_item">
@@ -143,7 +145,7 @@
 
                 <span class="price">£13</span>
 
-                <a class="just_eat_bt" title="Add to the cart"></a>
+                <a class="pizza_bt" title="Add to the cart"></a>
             </div>
             <div class="menu_item popular">
                 <img src="assets/menu/italian-pizza.png" alt="product shot" draggable="false" oncontextmenu="return false">
@@ -158,7 +160,7 @@
 
                 <span class="price">£13</span>
 
-                <a class="just_eat_bt" title="Add to the cart"></a>
+                <a class="pizza_bt" title="Add to the cart"></a>
             </div>
 
             <div class="menu_item popular">
@@ -174,7 +176,7 @@
 
                 <span class="price">£13</span>
 
-                <a class="just_eat_bt" title="Add to the cart"></a>
+                <a class="pizza_bt" title="Add to the cart"></a>
             </div>
             <div class="menu_item">
                 <img src="assets/menu/italian-pizza.png" alt="product shot" draggable="false" oncontextmenu="return false">
@@ -189,7 +191,7 @@
 
                 <span class="price">£13</span>
 
-                <a class="just_eat_bt" title="Add to the cart"></a>
+                <a class="pizza_bt" title="Add to the cart"></a>
             </div>
 
             <div class="menu_item">
@@ -205,7 +207,7 @@
 
                 <span class="price">£13</span>
 
-                <a class="just_eat_bt" title="Add to the cart"></a>
+                <a class="pizza_bt" title="Add to the cart"></a>
             </div>
         </div>
     </section>
@@ -267,13 +269,39 @@
     </section>
 
     <div class="cart_simulation">
-        <span class="qty"></span>
+        <span class="qty">0x</span>
         <a>Order now</a>
-        <span class="price"></span>
+        <span class="price">£00</span>
+    </div>
+        
     </div>
 
     <footer>
         <span>LoveSlice® is an OQVA brand, 2023. All Rights Reserved.</span>
     </footer>
+
+    <script>
+
+        let cartQty = 0;
+        const cartQtyEl = document.querySelector('.cart_simulation .qty')
+        const cartPrice = document.querySelector('.cart_simulation .price')
+
+        function updateCart(operation, type, price) {
+
+            if(operation == "add") {
+                cartQty++
+                cartQtyEl.innerHTML = `${cartQty}x`
+                cartPrice.innerHTML = `£${cartQty * price}`
+            } else if(operation == "remove") {
+                cartQty--
+                cartQtyEl.innerHTML = `${cartQty}x`
+                cartPrice.innerHTML = `£${cartQty * price}`
+            }
+
+            if(cartQty > 0) {
+                console.log('remove aparece')
+            }
+        }
+    </script>
 </body>
 </html>
