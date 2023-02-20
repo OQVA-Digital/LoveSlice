@@ -466,7 +466,7 @@ text-transform: uppercase;
   position: absolute;
   display: flex;
   bottom: 0;
-  transform: translateY(38%);
+  transform: translateY(50%);
   gap: 2rem;
 } .pizza_bt {
   width: clamp(3rem, 11vw, 3.5rem);
@@ -685,7 +685,7 @@ footer {
   transform: translateY(5rem);
   opacity: 0;
   visibility: hidden;
-  filter: drop-shadow(0 0.6rem 0.4rem #DB9);
+  filter: drop-shadow(0 0.6rem 0.4rem #ECA);
 } .cart_simulation.show {
   visibility: visible;
   opacity: 1;
@@ -704,27 +704,22 @@ footer {
   align-items: center;
   letter-spacing: 0.2rem;
   cursor: pointer;
+  border: 0.2rem solid var(--c1);
+  box-sizing: border-box;
 } .cart_simulation .qty, .cart_simulation .price {
-  
-display: flex;
-  
-font-weight: 800;
-  
-font-size: 1em;
-  
-background-color: #fff;
-  
-border-radius: 11rem;
-  
-width: clamp(4rem, 12vw, 4.5rem);
-  
-height: clamp(4rem, 12vw, 4.5rem);
-  
-color: var(--c1a);
-  
-justify-content: center;
-  
-align-items: center;
+  display: flex;
+  font-weight: 800;
+  font-size: 1em;
+  background-color: #fff;
+  border-radius: 11rem;
+  width: clamp(4rem, 16vw, 7rem);
+  height: clamp(4rem, 12vw, 4.5rem);
+  color: var(--c1a);
+  justify-content: center;
+  align-items: center;
+  border: 0.2rem solid #EEE;
+  box-sizing: border-box;
+  padding: 0 2rem;
 } .cart_simulation .price {
 
 }
