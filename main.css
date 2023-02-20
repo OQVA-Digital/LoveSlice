@@ -466,8 +466,9 @@ text-transform: uppercase;
   position: absolute;
   display: flex;
   bottom: 0;
-  transform: translateY(50%);
+  bottom: calc(clamp(3rem, 9vw, 3.3rem) / -2);
   gap: 2rem;
+  transition: transform 0.2s ease;
 } .pizza_bt {
   width: clamp(3rem, 11vw, 3.5rem);
   height: clamp(3rem, 11vw, 3.5rem);
@@ -480,6 +481,7 @@ text-transform: uppercase;
   cursor: pointer;
   border-radius: 1.8rem;
   transition: transform 0.2s ease, filter 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
 } .pizza_bt:hover {
   filter: brightness(1.2);
   transition: transform 0.2s ease, filter 0.05s ease;
@@ -707,19 +709,32 @@ footer {
   border: 0.2rem solid var(--c1);
   box-sizing: border-box;
 } .cart_simulation .qty, .cart_simulation .price {
-  display: flex;
-  font-weight: 800;
-  font-size: 1em;
-  background-color: #fff;
-  border-radius: 11rem;
-  width: clamp(4rem, 16vw, 7rem);
-  height: clamp(4rem, 12vw, 4.5rem);
-  color: var(--c1a);
-  justify-content: center;
-  align-items: center;
-  border: 0.2rem solid #EEE;
-  box-sizing: border-box;
-  padding: 0 2rem;
+  
+display: flex;
+  
+font-weight: 800;
+  
+font-size: 1em;
+  
+background-color: #fff;
+  
+border-radius: 11rem;
+  
+width: clamp(4rem, 16vw, 7rem);
+  
+height: clamp(4rem, 12vw, 4.5rem);
+  
+color: var(--c1a);
+  
+justify-content: center;
+  
+align-items: center;
+  
+border: 0.2rem solid #EEE;
+  
+box-sizing: border-box;
+  
+padding: 0 2rem;
 } .cart_simulation .price {
 
 }
@@ -866,6 +881,9 @@ padding: 8rem 0 0 0;
   } .menu_item:hover img {
     transform: scale(1.03);
     transition: transform 0.45s 0.3s ease;
+  } .menu_item:hover .operators {
+    transform: scale(1.08);
+    transition: transform 0.4s ease;
   }
   
   .contact_sec .flex {
