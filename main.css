@@ -38,8 +38,7 @@ html,
     
     --carousel-pizza-mobile-width:
     clamp(7rem, 80vw, 38rem);
-    --carousel-pizza-desktop-width:
-    clamp(7rem, 45vw, 55rem);
+    --carousel-pizza-desktop-width: clamp(7rem, 45vw, 49rem);
 
     --secondary-pizza-mobile-scale: 0.3;
     --secondary-pizza-desktop-scale: 0.3;
@@ -327,6 +326,7 @@ header {
   pointer-events: none;
   z-index: 1;
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
+  filter: drop-shadow(0rem 1rem 1rem #0004);
 }
 
 
@@ -484,7 +484,7 @@ text-transform: uppercase;
   -webkit-tap-highlight-color: transparent;
 } .pizza_bt:hover {
   filter: brightness(1.2);
-  transition: transform 0.2s ease, filter 0.05s ease;
+  transition: transform 0.05s ease, filter 0.05s ease;
 } .pizza_bt:active {
   filter: brightness(1);
   transition: transform 0.2s ease, filter 0.05s ease;
@@ -821,7 +821,7 @@ padding: 8rem 0 0 0;
     transform: rotate(-85deg) translateY(calc(clamp(20rem, 80vw, 90rem) / -2)) scale(var(--secondary-pizza-desktop-scale));
   }
   .pizza.p0 {
-    transform: rotate(-55deg) translateY(calc(var(--carousel-pizza-circle-size) / -2)) scale(0.4);
+    transform: rotate(-55deg) translateY(calc(var(--carousel-pizza-circle-size) / -2)) scale(0.5);
     transition: transform 0.5s cubic-bezier(0.46, 0.03, 0.52, 0.96), filter 0.3s ease;
   } .pizza.p0:hover, .pizza.p-1:hover {
     filter: drop-shadow(-1.5rem 0 0.2rem #00000088);
@@ -837,7 +837,7 @@ padding: 8rem 0 0 0;
 
 
   .pizza.p2 {
-    transform: rotate(55deg) translateY(calc(var(--carousel-pizza-circle-size) / -2)) scale(0.4);
+    transform: rotate(55deg) translateY(calc(var(--carousel-pizza-circle-size) / -2)) scale(0.5);
     transition: transform 0.5s cubic-bezier(0.46, 0.03, 0.52, 0.96), filter 0.3s ease;
   } .pizza.p2:hover, .pizza.p3:hover {
     filter: drop-shadow(1.5rem 0 0.2rem #00000088);
