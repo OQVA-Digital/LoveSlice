@@ -1,7 +1,7 @@
 # LoveSlice
 ## https://oqva-digital.github.io/LoveSlice/
 
-### One love in every slice.
+### 🍕💖 One love in every slice.
 
 At LoveSlice, we're all about celebrating the things that make us unique. We're like a pizza party that invites everyone to bring their own flavour to the table. We believe in embracing cultural diversity, and what better way to do that than through the universal language of pizza?
 
