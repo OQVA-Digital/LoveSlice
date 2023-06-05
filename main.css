@@ -36,11 +36,10 @@ html,
     --carousel-pizza-circle-size:
     clamp(20rem, 80vw, 90rem);
     
-    --carousel-pizza-mobile-width:
-    clamp(7rem, 80vw, 38rem);
+    --carousel-pizza-mobile-width: clamp(7rem, 70vw, 38rem);
     --carousel-pizza-desktop-width: clamp(7rem, 45vw, 49rem);
 
-    --secondary-pizza-mobile-scale: 0.3;
+    --secondary-pizza-mobile-scale: 0.33;
     --secondary-pizza-desktop-scale: 0.3;
   }
   
@@ -311,7 +310,7 @@ header {
   left: 0;
   right: 0;
   margin: 0 auto;
-  transition: transform 0.8s ease;
+  transition: transform 0.8s ease, filter 0.8s ease;
   will-change: transform;
   -webkit-tap-highlight-color: transparent;
 }
